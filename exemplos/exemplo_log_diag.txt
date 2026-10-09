@@ -1,0 +1,5 @@
+(93)[eboot.bi:385][DIAG]: 333.3418 <main> Start Diag Launching
+[m(93)[eboot.bi:385][DIAG]: 333.3418 <main> argv[1] = GDDR6 Inspection
+[m(93)[eboot.bi:385][DIAG]: 333.3461 <Allocate> Allocate DirectMemory. size: 1073741824
+[m(93)[eboot.bi:385][DIAG]: 333.3701 <GetDeviceList>  device : 0, id : 0x393078cc
+[m(93)[InputMan:401][DIAG]: 333.3742 <GetPadButton> user 0x1682327b opened

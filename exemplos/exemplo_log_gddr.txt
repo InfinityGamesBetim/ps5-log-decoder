@@ -1,0 +1,6 @@
+(93)[eboot.bi:385][DIAG]: 333.3418 <main> argv[1] = GDDR6 Inspection
+[m(93)[memtest:120][DIAG]: 334.1002 <Verify> 0xFE000801 Pattern Verify Test Failed
+[m(93)[memtest:120][ERROR]: umc.4 ch.0 phy.E
+[m(93)[memtest:120][ERROR]: expect 0x00000000 actual 0x00000004 numErrorBits 1
+[m(93)[memtest:120][ERROR]: umc.4 ch.1 phy.E
+[m(93)[memtest:120][ERROR]: expect 0xAAAAAAAA actual 0xAAAAAABA numErrorBits 2

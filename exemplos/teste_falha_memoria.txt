@@ -1,0 +1,32 @@
+[m(93)[eboot.bi:385][DIAG]: 333.3418 <main> Start Diag Launching
+[m(93)[eboot.bi:385][DIAG]: 333.3418 <main> argc = 10
+[m(93)[eboot.bi:385][DIAG]: 333.3418 <main> argv[1] = GDDR6 Inspection
+[m(93)[eboot.bi:385][DIAG]: 333.3419 <main> argv[2] = 1
+[m(93)[eboot.bi:385][DIAG]: 333.3419 <main> argv[3] = 2
+[m(93)[eboot.bi:385][DIAG]: 333.3461 <Allocate> Allocate DirectMemory. size: 1073741824, alignedSize: 1073741824, phy: 0x200000
+[m(93)[eboot.bi:385][DIAG]: 333.3463 <Create> Mapped mspace. size: 1073741824
+[m(93)[eboot.bi:385][DIAG]: 333.3465 <operator()> Config key: [network.network_interface] loaded as: [eth0]
+[m(93)[eboot.bi:385][DIAG]: 333.3465 <operator()> Config key: [network.ip_address] loaded as: [0.0.0.0]
+[m(93)[eboot.bi:385][DIAG]: 333.3466 <InitializeCpu> Start initialize CPU Affinity
+[m(93)[eboot.bi:385][DIAG]: 333.3477 <InitializeCpu> Changed  main thread CPU: 12 (0)ms
+[m(93)[eboot.bi:385][DIAG]: 333.3701 <GetDeviceList>  device : 0, id : 0x393078cc
+[m(93)[eboot.bi:385][DIAG]: 333.3709 <Start> ThreadPool Start Thread: [name: RootWindow, cpu: 12]
+[m(93)[eboot.bi:385][DIAG]: 333.3718 <Start> ThreadPool Start Thread: [name: ViewManager, cpu: 12]
+[m(93)[eboot.bi:385][DIAG]: 333.3737 <Start> ThreadPool Start Thread: [name: InputManager, cpu: 12]
+[m(93)[memtest:120][DIAG]: 334.0021 <GpuMemoryTest> Start GPU Memory Test (Native)
+[m(93)[memtest:120][DIAG]: 334.0022 <GpuMemoryTest> Target range: 0x00000000 - 0x3FFFFFFF  size: 1073741824
+[m(93)[memtest:120][DIAG]: 334.0510 <GpuMemoryTest> Pass 1/3 : Fixed Pattern
+[m(93)[memtest:120][DIAG]: 335.2240 <Verify> 0xFE000801 Pattern Verify Test Failed (04)
+[m(93)[memtest:120][ERROR]: umc.4 ch.0 phy.E
+[m(93)[memtest:120][ERROR]: expect 0x00000000 actual 0x00000004 numErrorBits 1
+[m(93)[memtest:120][DIAG]: 335.8800 <GpuMemoryTest> Pass 2/3 : Address Pattern
+[m(93)[memtest:120][DIAG]: 336.9015 <Verify> 0xFE000802 Address Verify Test Failed (04)
+[m(93)[memtest:120][ERROR]: umc.4 ch.0 phy.E
+[m(93)[memtest:120][ERROR]: expect 0x12340000 actual 0x12340040 numErrorBits 1
+[m(93)[memtest:120][DIAG]: 337.5500 <GpuMemoryTest> Pass 3/3 : Random Pattern
+[m(93)[memtest:120][DIAG]: 338.7701 <Verify> 0xFE000803 Random Verify Test Failed (04)
+[m(93)[memtest:120][ERROR]: umc.4 ch.1 phy.E
+[m(93)[memtest:120][ERROR]: expect 0xAAAAAAAA actual 0xAAAAAABA numErrorBits 2
+[m(93)[memtest:120][DIAG]: 338.9900 <GpuMemoryTest> GPU Memory Test finished with errors
+[m(93)[eboot.bi:385][DIAG]: 339.0100 <main> Diag result: FAIL
+[m(93)[eboot.bi:385][DIAG]: 339.0101 <main> Diag Finished

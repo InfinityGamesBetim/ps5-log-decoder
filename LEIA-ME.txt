@@ -1,0 +1,60 @@
+DECODIFICADOR DE LOG DO PS5  (Diag / EMC)
+==========================================
+
+O QUE E
+  Uma ferramenta de bancada que le o log cru do PS5 e te diz, em
+  portugues, o que ele esta falando: quais testes rodaram, quais
+  codigos de erro apareceram, o que cada codigo significa, a peca /
+  area suspeita e a temperatura registrada.
+
+  NAO precisa de internet. NAO fala com o console. NAO tem nada de
+  autenticacao. E so um tradutor: cruza o log com a base oficial de
+  codigos da Sony (615 codigos), extraida das tabelas de reparo
+  (ErrorCodeTable, DiagSummary e EMC Error Code).
+
+ARQUIVOS DESTA PASTA
+  decodificar_log.py ....... o programa
+  ps5_error_db.json ........ a base de 615 codigos (NAO apague)
+  Decodificar (arraste...).bat  atalho: arrasta o log pra cima dele
+  LEIA-ME.txt .............. este arquivo
+
+PRECISA
+  Python 3 instalado (o mesmo que voce usa no Nor Tools).
+  Nada de bibliotecas extras - usa so o que ja vem no Python.
+
+COMO USAR  (3 jeitos)
+
+  1) Arrastar e soltar (mais facil)
+     Arraste o arquivo de log, OU a pasta inteira do pendrive, para
+     cima do arquivo  "Decodificar (arraste o log aqui).bat".
+     Ele gera um  <nome>_RELATORIO.txt  e abre no Bloco de Notas.
+
+  2) Colar o log
+     Abra o Prompt de Comando nesta pasta e rode:
+         python decodificar_log.py
+     Cole o log, dê Enter e tecle Ctrl+Z e Enter para terminar.
+
+  3) Linha de comando
+         python decodificar_log.py  C:\caminho\log.txt
+         python decodificar_log.py  C:\pendrive\            (pasta toda)
+         python decodificar_log.py  log.txt -o relatorio.txt   (salva)
+
+O QUE ELE ENTENDE
+  - Log do Diag (o que sai no pendrive via UsbStorageChannel, com as
+    linhas <main>, argv[1] = ..., codigos 0xFE......).
+  - Log de erro do EMC (a tabela # No Code Rtc PowState ...), seja do
+    EmcLogViewer, do collect_log.txt ou colado direto. Decodifica o
+    codigo, a temperatura do SoC/ambiente e o numero do registro.
+  - Ignora sozinho os numeros que NAO sao erro (IDs de device,
+    enderecos de memoria, handles de usuario etc.).
+
+LIMITE
+  O EMC nem sempre aponta a peca exata - ele diz a AREA (ex.: "acesso
+  I2C", "sequencia de energia", "temperatura"). Use isso como ponto de
+  partida, nao como laudo fechado. Para os codigos do Diag (0xFE...) a
+  base traz a peca suspeita e a acao recomendada.
+
+ATUALIZAR A BASE
+  Se um dia pegar tabelas de codigo mais novas da Sony, da pra
+  regerar o ps5_error_db.json rodando os scripts de extracao
+  apontando para os HTML/PDF novos.

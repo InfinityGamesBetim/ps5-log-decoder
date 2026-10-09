@@ -1,0 +1,10 @@
+# nada de codigo-fonte, base ou build neste repo publico
+*.py
+*.json
+*.exe
+*.spec
+build/
+dist/
+__pycache__/
+_scripts_extracao/
+decoder_icon.ico
