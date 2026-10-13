@@ -1,0 +1,20 @@
+[m(84)[scf_diag:770][DIAG]: 118.4421 <main> Start Diag Launching
+[m(84)[scf_diag:770][DIAG]: 118.4421 <main> argv[1] = LSI Inspection
+[m(84)[scf_diag:770][DIAG]: 118.4422 <main> argv[2] = 1
+[m(84)[scf_diag:770][DIAG]: 118.4463 <Allocate> Allocate DirectMemory. size: 1073741824, phy: 0x200000
+[m(84)[scf_diag:770][DIAG]: 118.4731 <GetDeviceList>  device : 0, id : 0x393078cc
+[m[INFO]: 2.1140 <print_version> scf_nand_ssd_test rev[6.0_5 47725 192376(ppr/releases/06.00)SDK 06000042]
+[INFO]: 2.1140 <SCFMain> [CPU11] scf_nand_ssd_test start
+[DEBUG]: 2.1142 <Connect> SCF connect OK
+[DEBUG]: 2.3550 <GetInfo> Board Id : 40003B01003353A0
+[DEBUG]: 2.3551 <GetInfo> Product Serial : F11601TWW11639214
+[DEBUG]: 2.9015 <NandInit> Start NAND Initialize (12 ch)
+[WARN]: 3.1022 <NandInit> ch7 response NG, retrying...
+[WARN]: 3.3048 <NandInit> ch7 response NG, retrying...
+[ERROR]: 3.5071 <NandInit> 0xEA100019 ERROR : NAND Initialization is failed (ch0, ch1, ... ch11) = 01_01_01_01_01_01_01_00_01_01_01_01
+[ERROR]: 3.5072 <NandInit> NAND related failure
+[DEBUG]: 3.5080 <SmartInfo> SMART read skipped (NAND not ready)
+[ERROR]: 3.5200 <SCFMain> scf_nand_ssd_test FAILED
+[m(84)[scf_diag:770][ERROR]: 123.8891 <Do> Task Errored: [name: StartBigLsiDiag, error: -33549287 (0xEA100019)]
+[m(84)[scf_diag:770][DIAG]: 123.8902 <main> Diag result: FAIL
+[m

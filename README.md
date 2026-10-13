@@ -20,25 +20,29 @@ Baixe o programa pronto na aba **[Releases](../../releases/latest)** →
 
 ## Recursos
 
-- **Tudo em português.** As mensagens e os procedimentos saem traduzidos, mantendo
-  as siglas técnicas (CRC, GDDR, NAND, PCIe) e os nomes de teste. A **suspeita fica
-  em destaque**, fácil de bater o olho.
+- **Suspeita principal no topo.** Uma linha resume o laudo (ex.: `SUSPEITA PRINCIPAL:
+  NAND IC4204`) — bate o olho e já sabe.
+- **Mapa da placa (os dois lados).** Abre a foto da placa marcando GDDR, NAND,
+  controlador e APU, com o chip defeituoso **em vermelho**. Abre direto no lado certo
+  e tem botão para alternar LADO A (APU) / LADO B (RAM). Posições tiradas do diagrama
+  oficial (GDDR) e do boardview da EDM-010 (NAND).
+- **Tudo em português.** Mensagens e procedimentos traduzidos, mantendo as siglas
+  técnicas (CRC, GDDR, NAND, PCIe) e os nomes de teste.
 - **Base com mais de 600 códigos**, extraídos das próprias tabelas de diagnóstico do
   QA (ErrorCodeTable, DiagSummary e EMC Error Code), já com a peça/área suspeita.
 - **Identifica a memória GDDR com defeito.** Ao encontrar `umc.N` no log, mostra o
-  chip físico exato (ex.: `IC2201 / ref E`) e aplica a regra oficial:
-  mesmo `umc` sempre = GDDR ruim; `umc` variando = APU.
-- **Identifica a NAND do SSD interno.** Lê o status por canal
-  (`ch0 … ch11`) e aponta o chip NAND (ex.: `CH5 → IC4203 / CE0`).
+  chip físico exato (ex.: `IC2201 / ref E`): mesmo `umc` sempre = GDDR ruim;
+  `umc` variando = APU.
+- **Identifica a NAND do SSD** (6 chips, 3 de cada lado) pelo canal
+  (`ch0 … ch11`) → ex.: `CH7 → IC4204`.
 - **Núcleos de CPU.** No teste de carga, mostra qual(is) CPU falharam (ex.: CPU2, CPU3).
-- **Separa memória × APU.** Cruza quais testes passaram para apontar se o problema
-  é a RAM/SSD ou o processador (APU / Main SoC).
-- **Mostra a temperatura** registrada no EMC (SoC e ambiente), destacando
-  superaquecimento em vermelho.
-- **Lê dois tipos de log:** o do **Diag / LSI Inspection** (gravado no pendrive)
-  e o **EMC Error Log**.
-- **Filtra ruído:** ignora valores de dado (`expect/actual`, CRC, endereços, handles)
-  que não são códigos de erro.
+- **Separa memória × APU** e **lista os testes que passaram** para fechar o diagnóstico.
+- **Mostra a temperatura** e o **estado de energia** do EMC (quando/como o console estava).
+- **Copiar laudo**, zoom de fonte (A+/A−), legenda de cores e **coletor de códigos
+  desconhecidos** (para manter a base sempre atual).
+- **Filtra ruído:** ignora valores de dado (`expect/actual`, CRC, endereços, handles).
+
+![Mapa da placa](mapa.png)
 
 ## Como usar
 
@@ -51,6 +55,12 @@ Baixe o programa pronto na aba **[Releases](../../releases/latest)** →
 
 - Windows. **Não precisa instalar nada** e **não precisa de internet** — a base de
   códigos vem embutida no executável.
+
+## Aviso do Windows na primeira vez
+
+O `.exe` não é assinado digitalmente, então o **SmartScreen** pode mostrar
+"O Windows protegeu o computador". É normal para programas pequenos. Para abrir:
+clique em **Mais informações → Executar assim mesmo**.
 
 ## De onde vêm os dados
 
