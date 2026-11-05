@@ -22,10 +22,10 @@ Baixe o programa pronto na aba **[Releases](../../releases/latest)** →
 
 - **Suspeita principal no topo.** Uma linha resume o laudo (ex.: `SUSPEITA PRINCIPAL:
   NAND IC4204`) — bate o olho e já sabe.
-- **Mapa da placa (os dois lados).** Abre a foto da placa marcando GDDR, NAND,
-  controlador e APU, com o chip defeituoso **em vermelho**. Abre direto no lado certo
-  e tem botão para alternar LADO A (APU) / LADO B (RAM). Posições tiradas do diagrama
-  oficial (GDDR) e do boardview da EDM-010 (NAND).
+- **Mapa da placa (os dois lados juntos).** Abre a foto da placa com os dois lados
+  lado a lado, marcando a peça do erro **em vermelho** e as do mesmo circuito **em
+  âmbar** (GDDR, NAND, controlador, cache e APU), com legenda embaixo. Posições do
+  manual de serviço da EDM.
 - **Tudo em português.** Mensagens e procedimentos traduzidos, mantendo as siglas
   técnicas (CRC, GDDR, NAND, PCIe) e os nomes de teste.
 - **Base com mais de 600 códigos**, extraídos das próprias tabelas de diagnóstico do
@@ -73,6 +73,16 @@ memória×APU seguem o que esses documentos descrevem.
 - O log precisa chegar até o ponto da falha: se o console não sobe o Diag, não há log.
 - O detalhe da memória (`umc.N`) só aparece quando um teste de GDDR falha de fato.
 - A tela do QA mostra só pass/fail; quem aponta o componente é o **log**.
+
+---
+
+## ☕ Apoie o projeto (Pix)
+
+Opcional — se o programa te ajudou, uma doação via **Pix** é bem-vinda:
+
+<img src="pix.png" alt="QR Code Pix" width="130">
+
+Chave Pix (aleatória): `8e0c215f-eba5-4356-8fe8-03354bed3522`
 
 ---
 
